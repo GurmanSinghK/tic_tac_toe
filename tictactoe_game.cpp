@@ -256,14 +256,11 @@ void Game::startGame()
 
     while (count<9)
     {
-        if (checkWinner()==true)
-        {
-            return;
-        }
+        
         if (chance==true)
         {
             cout<<p1.name<<" chance"<<endl;
-            cout<<"Enter the row and column where you want to place 1: "<<endl;
+            cout<<"Enter the row and column where you want to place X: "<<endl;
             cin>>r>>c;
 
             if (r>=0 && c>=0 && r<3 && c<3 && board[r][c]=='-')
@@ -299,6 +296,10 @@ void Game::startGame()
                 cout<<"Please enter valid row and column"<<endl;
             }
 
+        }
+        if (checkWinner()==true)
+        {
+            return;
         }
     }
     if (count == 9) {
